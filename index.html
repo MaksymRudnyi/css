@@ -59,8 +59,8 @@
 		var div = document.createElement('div');
 		div.classList.add('box');
 
-		div.innerHTML = '<div class="title-container">' +
-			'<div class="title">Box ' + (i + 1) + '</div>' +
+		div.innerHTML = '<div class="title-container container-' + i + '">' +
+			'<div class="title item-' + i + '" id="item-' + i + '">Box ' + (i + 1) + '</div>' +
 			'</div>';
 
 		if (i === count - 1)
@@ -74,7 +74,14 @@
 		var selectors = [
 			"div.box:not(:empty):last-of-type .title",
 			".box--last > .title-container > .title",
-			".box:nth-last-child(-n+1) .title"
+			".box:nth-last-child(-n+1) .title",
+            ".item-999",
+            '.container-999 div',
+            '#item-1002',
+            '.box-container .item-99999',
+            '.box-container .box:last-child .title',
+            '.box-container .box:last-child div',
+
 		];
 
 		selectors.forEach(function(s) {
