@@ -78,15 +78,16 @@
             ".item-999",
             '.container-999 div',
             '#item-1002',
-            '.box-container .item-99999',
+            '.box-container .item-9999',
             '.box-container .box:last-child .title',
             '.box-container .box:last-child div',
-
+            '.title-container .title',
+            'div[class*="title-container"]'
 		];
 
 		selectors.forEach(function(s) {
 			console.time(s);
-			var d = document.querySelector(s);
+			let d = document.querySelector(s);
 			console.timeEnd(s);
 			console.log(d);
 		});
